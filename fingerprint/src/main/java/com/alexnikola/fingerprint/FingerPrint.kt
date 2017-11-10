@@ -1,8 +1,11 @@
 package com.alexnikola.fingerprint
 
+import android.os.Build
+import android.support.annotation.RequiresApi
 import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
 
+@RequiresApi(api = Build.VERSION_CODES.M)
 class FingerPrint {
 
     private var activity: AppCompatActivity? = null
