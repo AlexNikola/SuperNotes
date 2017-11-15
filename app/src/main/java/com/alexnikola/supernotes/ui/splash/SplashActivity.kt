@@ -1,19 +1,19 @@
-package com.alexnikola.supernotes
+package com.alexnikola.supernotes.ui.splash
 
 import android.content.Intent
-import android.os.Build
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import com.alexnikola.fingerprint.FingerPrint
-import com.alexnikola.supernotes.utils.AndroidUtilities
+import com.alexnikola.supernotes.ui.main.MainActivity
 
 class SplashActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        AndroidUtilities.lockOrientation(this)
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+        startActivity(Intent(this, MainActivity::class.java))
+        finish()
+
+        /*if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             FingerPrint.with(this)
                     .withPassword("dfddfg")
                     .withFinger(true)
@@ -21,9 +21,9 @@ class SplashActivity : AppCompatActivity() {
                     .withFingerMessage("Confirm fingerprint")
                     .withPasswordMessage("Enter your password")
                     .show()
-        } else{
+        } else {
             startActivity(Intent(this, MainActivity::class.java))
-        }
+        }*/
 
     }
 }

@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.alexnikola.supernotes">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.USE_FINGERPRINT" />
 
     <application
@@ -13,12 +14,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name="com.alexnikola.supernotes.MainActivity"
+            android:name="com.alexnikola.supernotes.ui.main.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity
-            android:name="com.alexnikola.supernotes.SplashActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:name="com.alexnikola.supernotes.ui.splash.SplashActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -28,10 +29,10 @@
         <activity
             android:name="com.alexnikola.supernotes.SettingsActivity"
             android:label="@string/title_activity_settings"
-            android:parentActivityName="com.alexnikola.supernotes.MainActivity">
+            android:parentActivityName="com.alexnikola.supernotes.ui.main.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.alexnikola.supernotes.MainActivity" />
+                android:value="com.alexnikola.supernotes.ui.main.MainActivity" />
         </activity>
     </application>
 

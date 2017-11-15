@@ -139,7 +139,7 @@ class FingerPrintDialog : DialogFragment(), TextView.OnEditorActionListener, Fin
      * let's the activity know about the result.
      */
     private fun verifyPassword() {
-        if (!checkPassword(passwordEditText!!.text.toString())) {
+        if (!checkPassword(view!!.passwordEditText!!.text.toString())) {
             return
         }
         /*if (stage == Stage.NEW_FINGERPRINT_ENROLLED) {

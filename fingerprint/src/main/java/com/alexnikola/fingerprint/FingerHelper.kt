@@ -32,8 +32,7 @@ class FingerHelper internal constructor(private val context: Context,
         }
 
         override fun onAuthenticationFailed() {
-            showError(icon.resources.getString(
-                    R.string.fingerprint_not_recognized))
+            showError(icon.resources.getString(R.string.fingerprint_not_recognized))
         }
 
         override fun onAuthenticationSucceeded(result: FingerprintManager.AuthenticationResult) {
@@ -51,8 +50,7 @@ class FingerHelper internal constructor(private val context: Context,
         get() = fingerprintManager.isHardwareDetected && fingerprintManager.hasEnrolledFingerprints()
 
     private val resetErrorTextRunnable = Runnable {
-        errorTextView.setTextColor(
-                errorTextView.resources.getColor(R.color.hint_color, null))
+        errorTextView.setTextColor(errorTextView.resources.getColor(R.color.hint_color, null))
         errorTextView.text = errorTextView.resources.getString(R.string.fingerprint_hint)
         icon.setImageResource(R.drawable.ic_fingerprint_black_24dp)
     }
